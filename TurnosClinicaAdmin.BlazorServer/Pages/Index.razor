@@ -1,0 +1,65 @@
+﻿@page "/"
+@page "/Login"
+@using TurnocClinica.Shared.DTO;
+@inject IRepositorio repositorio
+@inject NavigationManager navigationManager
+@inject SweetAlertService swal
+
+<PageTitle>Home</PageTitle>
+
+<div class="login-main d-flex align-items-center justify-content-center" style="height:100vh">
+
+
+    <EditForm class="formLogin" Model="@loginDto" OnValidSubmit="OnValidSubmit">
+
+        <DataAnnotationsValidator />
+
+        <div class="border p-5 login-main-body">
+
+            <h1 class="text-center p-4">Iniciar sesión</h1>
+
+            <div class="mb-5">
+                <label class="form-label">Email</label>
+                <InputText class="form-control" @bind-Value="loginDto.CORREO_CUENTA" />
+                <ValidationMessage For="@(() => loginDto.CORREO_CUENTA)" />
+            </div>
+
+            <div class="mb-5">
+                <label class="form-label">Contraseña</label>
+                <InputText type="password" class="form-control" @bind-Value="loginDto.PASSWORD_CUENTA" />
+                <ValidationMessage For="@(() => loginDto.PASSWORD_CUENTA)" />
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-light p-2 w-100 rounded-pill">Acceder</button>
+            </div>
+            
+        </div>
+
+    </EditForm>
+</div>
+
+
+
+
+@code{
+    LoginDTO loginDto = new LoginDTO();
+
+    private async Task OnValidSubmit()
+    {
+
+        int status = await repositorio.ExisteUsuario(loginDto);
+
+        if(status == 1)
+        {
+            navigationManager.NavigateTo("/paginaPrincipal");
+        }
+        else
+        {
+            loginDto.PASSWORD_CUENTA = "";
+            await swal.FireAsync("Error", "Credenciales incorrectas", SweetAlertIcon.Error);
+        }
+    }
+
+    
+}

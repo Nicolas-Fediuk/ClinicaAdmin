@@ -1,0 +1,68 @@
+﻿@using TurnocClinica.Shared.Entidades;
+@using TurnosClinicaAdmin.DAL;
+@inject SweetAlertService swal
+@inject NavigationManager navigationManager
+@inject IRepositorio repositorio
+
+<FiltroMedico BuscarDNI="BuscarDNI"/>
+
+@foreach (var medico in Medicos)
+{
+    <div id="medicosList" class="container bg-white d-flex justify-content-evenly p-3 rounded mb-5 ">
+
+        <div class="d-flex justify-content-center align-content-center p-3">
+            <img class="w-75" src="@medico.FOTO_MED" alt="Foto medico" />
+        </div>
+
+        <div class="d-flex flex-column justify-content-center align-content-center p-3">
+            <div>
+                <p class="text-center text-black fs-3">@medico.NOMBRE_MED @medico.APELLIDO_MED</p>
+                <p>@medico.Especialidad.NOMBRE_ESP</p>
+            </div>
+
+            <div>
+                <a href="/editar/@medico.DNI_MED" class="btn btn-primary">Editar</a>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center align-content-center p-3">
+            <p class="fs-3">Horario de atencion</p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Dia
+                        </th>
+                        <th class="text-center">
+                            Horario
+                        </th>
+                    </tr>
+                </thead>
+
+                @foreach (var horario in medico.horarios)
+                {
+                    <tr>
+                        <td>
+                            <p>@horario.DIA_ATEN</p>
+                        </td>
+                        <td>
+                            <p>@horario.HRINICIO_ATEN - @horario.HRFIN_ATEN</p>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+}
+
+@code {
+
+    [Parameter]
+    public IEnumerable<Medico> Medicos { get; set; } = new List<Medico>();
+
+    private async Task BuscarDNI(string dni)
+    {
+        Medicos = await repositorio.GetMedicos(dni);
+    }
+}

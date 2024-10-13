@@ -1,0 +1,52 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager navigationManager
+
+<PageTitle>Login</PageTitle>
+
+@if (!EsPaginaIndex())
+{
+    <nav class="navbar navbar-expand-lg text-white p-3 border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand text-black" href="#">
+                Administración clinica
+            </a>
+            <div class="collapse navbar-collapse w-100 justify-content-evenly" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a id="link" class="nav-link text-black" href="/nuevoMedico">Nuevo medico</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a id="link" class="nav-link text-black ms-2" href="/login">Salir</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+}
+
+
+<main>
+    @Body
+</main>
+
+
+@if (!EsPaginaIndex())
+{
+    <footer class="text-center bottom-0">
+        <p class="text-white p-3">&copy; 2024 Clinica. Todos los derechos reservados.</p>
+    </footer>
+}
+
+@code{
+
+    private bool EsPaginaIndex()
+    {
+        var currentUrl = navigationManager.Uri;
+        return currentUrl.EndsWith("/") || currentUrl.Contains("/Login");
+    }
+
+}

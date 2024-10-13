@@ -1,0 +1,111 @@
+﻿@page "/editar/{DNI_MED:double}"
+@inject SweetAlertService swal
+@inject NavigationManager navigationManager
+@inject IRepositorio repositorio
+
+<h3>Editar</h3>
+
+<EditForm Model="@medico" OnValidSubmit="OnValidSubmit">
+
+    <DataAnnotationsValidator />
+
+    <div class="container border p-5">
+        <div class="mb-5">
+            <label class="form-label">DNI</label>
+            <InputNumber class="form-control" @bind-Value="medico.DNI_MED" />
+            <ValidationMessage For="@(() => medico.DNI_MED)" />
+        </div>
+
+        <div class="mb-5">
+            <label class="form-label">Nombre</label>
+            <InputText class="form-control" @bind-Value="medico.NOMBRE_MED" />
+            <ValidationMessage For="@(() => medico.NOMBRE_MED)" />
+        </div>
+
+        <div class="mb-5">
+            <label class="form-label">Apellido</label>
+            <InputText class="form-control" @bind-Value="medico.APELLIDO_MED" />
+            <ValidationMessage For="@(() => medico.APELLIDO_MED)" />
+        </div>
+
+        <div class="mb-5 pb-3">
+            <p class="form-label pb-2">Sexo</p>
+            <InputRadioGroup @bind-Value="medico.SEXO_MED">
+                <label class="form-check-label">Masculino</label>
+                <InputRadio Value="'M'" class="form-check-input mx-3" />
+                <label class="form-check-label px-3">Femenino</label>
+                <InputRadio Value="'F'" class="form-check-input" />
+            </InputRadioGroup>
+        </div>
+
+        <div class="mb-5">
+            <label class="form-label">Nacionalidad</label>
+            <InputText class="form-control" @bind-Value="medico.NACIONALIDAD_MED" />
+            <ValidationMessage For="@(() => medico.NACIONALIDAD_MED)" />
+        </div>
+
+        <div class="mb-5">
+            <label class="form-label">Fecha de nacimiento</label>
+            <InputDate class="form-control" @bind-Value="medico.FECNAC_MED" />
+            <ValidationMessage For="@(() => medico.FECNAC_MED)" />
+        </div>
+
+        <div class="mb-5">
+            <label class="form-label">Direccion</label>
+            <InputText class="form-control" @bind-Value="medico.DIREC_MED" />
+        </div>
+
+        <div class="mb-5">
+            <label class="form-label">Localidad</label>
+            <InputText class="form-control" @bind-Value="medico.LOCALIDAD_MED" />
+        </div>
+
+        <div class="mb-5">
+            <label class="form-label">Provincia</label>
+            <InputText class="form-control" @bind-Value="medico.PROVINCIA_MED" />
+        </div>
+
+        <div class="mb-5">
+            <label class="form-label">Telefono</label>
+            <InputNumber class="form-control" @bind-Value="medico.TELEFONO_MED" />
+        </div>
+
+        <div class="mb-5">
+            <label class="form-label">Especialidad</label>
+            <InputSelect class="form-select" @bind-Value="medico.IDESP_MED">
+                <option value="no">--Seleccionar--</option>
+                @foreach (var especialidad in especialidades)
+                {
+                    <option value="@especialidad.ID_ESP">@especialidad.NOMBRE_ESP</option>
+                }
+            </InputSelect>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+
+
+</EditForm>
+
+
+@code {
+
+    [Parameter]
+    public double DNI_MED { get; set; }
+
+    public Medico medico = new Medico();
+
+    IEnumerable<Especialidad> especialidades = new List<Especialidad>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        especialidades = await repositorio.GetEspecialidades();
+        medico = await repositorio.GetMedicoEditar(DNI_MED);
+    }
+
+    public async Task OnValidSubmit()
+    {
+        
+    }
+}

@@ -1,0 +1,26 @@
+﻿@page "/paginaPrincipal"
+@inject SweetAlertService swal
+@inject NavigationManager navigationManager
+@inject IRepositorio repositorio
+
+<div class="main-bg">
+    <h3 class="text-center text-black p-4">PaginaPrincipal</h3>
+    
+    <ListadoMedicos Medicos="medicos" />
+</div>
+
+
+
+
+@code {
+    IEnumerable<Medico> medicos = new List<Medico>();
+
+
+    private string nombre { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        medicos = await repositorio.GetMedicos();
+
+    }
+}

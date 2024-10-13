@@ -1,0 +1,15 @@
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\bin\Debug\net7.0\TurnosClinicaAdmin.DAL.deps.json
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\bin\Debug\net7.0\TurnosClinicaAdmin.DAL.dll
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\bin\Debug\net7.0\TurnosClinicaAdmin.DAL.pdb
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\obj\Debug\net7.0\TurnosClinicaAdmin.DAL.csproj.AssemblyReference.cache
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\obj\Debug\net7.0\TurnosClinicaAdmin.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\obj\Debug\net7.0\TurnosClinicaAdmin.DAL.AssemblyInfoInputs.cache
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\obj\Debug\net7.0\TurnosClinicaAdmin.DAL.AssemblyInfo.cs
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\obj\Debug\net7.0\TurnosClinicaAdmin.DAL.csproj.CoreCompileInputs.cache
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\obj\Debug\net7.0\TurnosClinicaAdmin.DAL.dll
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\obj\Debug\net7.0\refint\TurnosClinicaAdmin.DAL.dll
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\obj\Debug\net7.0\TurnosClinicaAdmin.DAL.pdb
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\obj\Debug\net7.0\ref\TurnosClinicaAdmin.DAL.dll
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\bin\Debug\net7.0\TurnosClinicaAdmin.DMN.dll
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\bin\Debug\net7.0\TurnosClinicaAdmin.DMN.pdb
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.DAL\obj\Debug\net7.0\TurnosClinicaAdmin.DAL.csproj.CopyComplete

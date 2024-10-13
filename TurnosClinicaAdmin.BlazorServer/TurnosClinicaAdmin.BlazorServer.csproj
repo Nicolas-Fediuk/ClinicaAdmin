@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CurrieTechnologies.Razor.SweetAlert2" Version="5.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TurnosClinicaAdmin.DAL\TurnosClinicaAdmin.DAL.csproj" />
+    <ProjectReference Include="..\TurnosClinicaAdmin.DMN\TurnosClinicaAdmin.DMN.csproj" />
+  </ItemGroup>
+
+</Project>
