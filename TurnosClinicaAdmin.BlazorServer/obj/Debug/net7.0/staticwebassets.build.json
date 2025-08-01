@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FqGtSLePo9A7/TXqsEOx+UAtD43f8liupOS30PwJ+g4=",
+  "Hash": "1DoMB/bKshPcIVO1uGAc7Q5RACEQhc2vsR7QrA8pyrY=",
   "Source": "TurnosClinicaAdmin.BlazorServer",
   "BasePath": "_content/TurnosClinicaAdmin.BlazorServer",
   "Mode": "Default",
@@ -848,6 +848,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\nfediuk\\Desktop\\TurnosClinicaAdmin\\TurnosClinicaAdmin.BlazorServer\\wwwroot\\img\\bg-login.webp",
+      "SourceId": "TurnosClinicaAdmin.BlazorServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nfediuk\\Desktop\\TurnosClinicaAdmin\\TurnosClinicaAdmin.BlazorServer\\wwwroot\\",
+      "BasePath": "_content/TurnosClinicaAdmin.BlazorServer",
+      "RelativePath": "img/bg-login.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\bg-login.webp"
     },
     {
       "Identity": "C:\\Users\\nfediuk\\Desktop\\TurnosClinicaAdmin\\TurnosClinicaAdmin.BlazorServer\\wwwroot\\img\\header.jpg",

@@ -4,6 +4,7 @@
 @inject IRepositorio repositorio
 @inject NavigationManager navigationManager
 @inject SweetAlertService swal
+@inject IHttpContextAccessor HttpContextAccessor
 
 <PageTitle>Home</PageTitle>
 
@@ -52,6 +53,7 @@
 
         if(status == 1)
         {
+            HttpContextAccessor.HttpContext.Session.SetString("Nombre", "Admin");
             navigationManager.NavigateTo("/paginaPrincipal");
         }
         else

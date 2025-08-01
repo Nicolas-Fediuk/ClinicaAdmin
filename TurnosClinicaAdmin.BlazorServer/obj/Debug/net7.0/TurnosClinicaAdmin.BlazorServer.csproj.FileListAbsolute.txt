@@ -47,3 +47,4 @@ C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.BlazorServer\bin\
 C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.BlazorServer\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.BlazorServer\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.BlazorServer\obj\Debug\net7.0\TurnosClinicaAdmin.BlazorServer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\nfediuk\Desktop\TurnosClinicaAdmin\TurnosClinicaAdmin.BlazorServer\bin\Debug\net7.0\System.Security.Permissions.dll

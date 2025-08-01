@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using TurnocClinica.Shared.DTO;
 using TurnocClinica.Shared.Entidades;
 using TurnosClinicaAdmin.BlazorServer.Helpers;
+using TurnosClinicaAdmin.DMN;
 
 namespace TurnosClinicaAdmin.DAL
 {
@@ -114,6 +115,28 @@ namespace TurnosClinicaAdmin.DAL
             using var connection = new SqlConnection(connectionString);
 
             return await connection.QueryFirstOrDefaultAsync<string>("select NOMBRE_USR + ' ' + APELLIDO_USR from USUARIO where CORREO_USR = @correo", correo);
+        }
+
+        public async Task<IEnumerable<Pais>> GetPaises()
+        {
+            using var connection = new SqlConnection(connectionString);
+
+            return await connection.QueryAsync<Pais>(@"select GRTPAH_CODPAI, GRTPAH_DESCRP from GRTPAH");
+        }
+
+        public async Task<IEnumerable<Localidad>> GetLocalidades(string pais)
+        {
+            using var connection = new SqlConnection(connectionString);
+
+            return await connection.QueryAsync<Localidad>(@"select GRTPAC_CODPAI, GRTPAC_CODPOS, GRTPAC_DESCRP from GRTPAC
+                                                        where GRTPAC_CODPAI = @pais",pais);
+        }
+
+        public async Task EditarMedico(Medico medico)
+        {
+            using var connection = new SqlConnection(connectionString);
+
+            
         }
 
     }

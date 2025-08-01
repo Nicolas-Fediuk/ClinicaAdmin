@@ -6,7 +6,6 @@
 .login-main {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/login.jpg);
     background-size: cover;
-
 }
 
 .login-main-body {

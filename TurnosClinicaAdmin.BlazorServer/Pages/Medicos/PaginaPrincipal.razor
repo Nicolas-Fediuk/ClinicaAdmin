@@ -2,6 +2,7 @@
 @inject SweetAlertService swal
 @inject NavigationManager navigationManager
 @inject IRepositorio repositorio
+@inject IHttpContextAccessor HttpContextAccessor
 
 <div class="main-bg">
     <h3 class="text-center text-black p-4">PaginaPrincipal</h3>
@@ -18,9 +19,21 @@
 
     private string nombre { get; set; }
 
-    protected override async Task OnInitializedAsync()
+    protected override  Task OnInitializedAsync()
     {
-        medicos = await repositorio.GetMedicos();
+
+        /*@if (string.IsNullOrEmpty(HttpContextAccessor.HttpContext.Session.GetString("User")))
+        {
+            navigationManager.NavigateTo("Index");
+        }
+        else
+        {
+            medicos = await repositorio.GetMedicos();
+        }*/
+        return Task.CompletedTask;
 
     }
+        
+
+    
 }

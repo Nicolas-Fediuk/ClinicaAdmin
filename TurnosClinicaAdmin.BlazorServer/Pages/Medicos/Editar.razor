@@ -12,7 +12,7 @@
     <div class="container border p-5">
         <div class="mb-5">
             <label class="form-label">DNI</label>
-            <InputNumber class="form-control" @bind-Value="medico.DNI_MED" />
+            <InputNumber readonly="true" class="form-control" @bind-Value="medico.DNI_MED" />
             <ValidationMessage For="@(() => medico.DNI_MED)" />
         </div>
 
@@ -39,30 +39,36 @@
         </div>
 
         <div class="mb-5">
-            <label class="form-label">Nacionalidad</label>
-            <InputText class="form-control" @bind-Value="medico.NACIONALIDAD_MED" />
-            <ValidationMessage For="@(() => medico.NACIONALIDAD_MED)" />
-        </div>
-
-        <div class="mb-5">
             <label class="form-label">Fecha de nacimiento</label>
             <InputDate class="form-control" @bind-Value="medico.FECNAC_MED" />
             <ValidationMessage For="@(() => medico.FECNAC_MED)" />
         </div>
 
         <div class="mb-5">
-            <label class="form-label">Direccion</label>
-            <InputText class="form-control" @bind-Value="medico.DIREC_MED" />
+            <label class="form-label">Nacionalidad</label>
+            <InputSelect class="form-select" @bind-Value="medico.NACIONALIDAD_MED" @bind-Value:after="cambia">
+                <option value="no">--Seleccionar--</option>
+                @foreach (var pais in paises)
+                {
+                    <option value="@pais.GRTPAH_CODPAI">@pais.GRTPAH_DESCRP</option>
+                }
+            </InputSelect>
         </div>
 
         <div class="mb-5">
             <label class="form-label">Localidad</label>
-            <InputText class="form-control" @bind-Value="medico.LOCALIDAD_MED" />
+            <InputSelect readonly="@seleccionPais" class="form-select" @bind-Value="medico.LOCALIDAD_MED">
+                <option value="no">--Seleccionar--</option>
+                @foreach (var localidad in localidades)
+                {
+                    <option value="@localidad.GRTPAC_CODPOS">@localidad.GRTPAC_DESCRP</option>
+                }
+            </InputSelect>
         </div>
 
         <div class="mb-5">
-            <label class="form-label">Provincia</label>
-            <InputText class="form-control" @bind-Value="medico.PROVINCIA_MED" />
+            <label class="form-label">Direccion</label>
+            <InputText class="form-control" @bind-Value="medico.DIREC_MED" />
         </div>
 
         <div class="mb-5">
@@ -96,16 +102,28 @@
 
     public Medico medico = new Medico();
 
+    public bool seleccionPais = true;
+
     IEnumerable<Especialidad> especialidades = new List<Especialidad>();
+    IEnumerable<Pais> paises = new List<Pais>();
+    IEnumerable<Localidad> localidades = new List<Localidad>();
 
     protected override async Task OnInitializedAsync()
     {
         especialidades = await repositorio.GetEspecialidades();
         medico = await repositorio.GetMedicoEditar(DNI_MED);
+        paises = await repositorio.GetPaises();
     }
 
     public async Task OnValidSubmit()
     {
-        
+        await repositorio.EditarMedico(medico);
+    }
+
+    public void cambia()
+    {
+        var a = medico.NACIONALIDAD_MED;
+
+        var b = 0;
     }
 }

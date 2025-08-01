@@ -89,6 +89,10 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
+      "Id": "C:\\Users\\nfediuk\\Desktop\\TurnosClinicaAdmin\\TurnosClinicaAdmin.BlazorServer\\wwwroot\\img\\bg-login.webp",
+      "PackagePath": "staticwebassets\\img\\bg-login.webp"
+    },
+    {
       "Id": "C:\\Users\\nfediuk\\Desktop\\TurnosClinicaAdmin\\TurnosClinicaAdmin.BlazorServer\\wwwroot\\img\\header.jpg",
       "PackagePath": "staticwebassets\\img\\header.jpg"
     },
